@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minimal-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: microservice.com
+      http:
+        paths:
+          - path: /micro1
+            pathType: Prefix
+            backend:
+              service:
+                name: microservice1-serv
+                port:
+                  number: 3001
+          - path: /micro2
+            pathType: Prefix
+            backend:
+              service:
+                name: microservice2-serv
+                port:
+                  number: 3002

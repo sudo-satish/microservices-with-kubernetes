@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice2-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservice2
+  template:
+    metadata:
+      labels:
+        app: microservice2
+    spec:
+      containers:
+        - name: microservice2
+          image: sssrockgupta/microservice2
+          env: 
+            - name: NATS_HOST
+              value: nats-srv
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice2-serv
+spec:
+  selector:
+    app: microservice2
+  ports:
+    - name: microservice2
+      protocol: TCP
+      port: 3002
+      targetPort: 3002
