@@ -9,6 +9,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import resolvers from './graphql/resolvers';
 
+const graphqlPath = process.env.PREFIX
+  ? `/${process.env.PREFIX || ''}/graphql`
+  : '/graphql';
+
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -38,7 +42,7 @@ import resolvers from './graphql/resolvers';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-      path: `/${process.env.PREFIX || ''}/graphql`,
+      path: graphqlPath,
     }),
   ],
   controllers: [AppController],

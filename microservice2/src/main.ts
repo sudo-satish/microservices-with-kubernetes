@@ -15,7 +15,7 @@ async function bootstrap() {
   });
 
   await app.startAllMicroservices();
-  app.setGlobalPrefix(configService.get('PREFIX'));
+  app.setGlobalPrefix(configService.get('PREFIX') || '');
   await app.listen(+configService.get('PORT') || 3002);
 }
 bootstrap();
