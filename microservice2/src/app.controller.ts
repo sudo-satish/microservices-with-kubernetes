@@ -27,6 +27,11 @@ export class AppController {
     return payload;
   }
 
+  @Get('/m2')
+  getM2() {
+    return 'M@';
+  }
+
   @MessagePattern({ cmd: 'sum' })
   accumulate(data: number[], options): number {
     console.log('Command Executed', JSON.stringify(options));

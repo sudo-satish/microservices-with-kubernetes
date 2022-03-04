@@ -38,6 +38,7 @@ import resolvers from './graphql/resolvers';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      path: `/${process.env.PREFIX || ''}/graphql`,
     }),
   ],
   controllers: [AppController],

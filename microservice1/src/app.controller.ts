@@ -25,6 +25,7 @@ export class AppController {
 
   @Get('/emit-event')
   emitEvent() {
+    console.log('Event Emitted');
     this.client.emit<number>('user_created', {
       name: 'user_created',
       data: {
@@ -37,6 +38,11 @@ export class AppController {
   @Get('/login')
   login() {
     return this.jwtService.sign({ name: 'Satish' }, { expiresIn: 60 * 60 });
+  }
+
+  @Get('/m1')
+  getM1() {
+    return 'M1';
   }
 
   @Post('/verify')
