@@ -18,6 +18,17 @@ export class AppController {
     return this.client.send<number>(pattern, payload);
   }
 
+  @Get('/emit-event')
+  emitEvent() {
+    this.client.emit<number>('user_created', {
+      name: 'user_created',
+      data: {
+        name: 'Satish',
+      },
+    });
+    return 'Event Emitted';
+  }
+
   @Get('/login')
   login() {
     return this.jwtService.sign({ name: 'Satish' }, { expiresIn: 60 * 60 });

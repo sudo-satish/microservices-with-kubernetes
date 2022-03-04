@@ -1,6 +1,10 @@
 import { Body, Controller, Get, Inject, Post } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { ClientProxy, MessagePattern } from '@nestjs/microservices';
+import {
+  ClientProxy,
+  EventPattern,
+  MessagePattern,
+} from '@nestjs/microservices';
 import { AppService } from './app.service';
 
 @Controller()
@@ -24,9 +28,16 @@ export class AppController {
   }
 
   @MessagePattern({ cmd: 'sum' })
-  accumulate(data: number[]): number {
-    console.log('Command Executed');
+  accumulate(data: number[], options): number {
+    console.log('Command Executed', JSON.stringify(options));
     return (data || []).reduce((a, b) => a + b);
+  }
+
+  @EventPattern('user_created')
+  userCreated(data: Record<string, unknown>): number {
+    console.log('user created!');
+    console.log(data);
+    return 10;
   }
 
   async onApplicationBootstrap() {

@@ -18,6 +18,10 @@ spec:
           env: 
             - name: NATS_CONNECTION_URL
               value: nats://nats-srv:4222
+            - name: PORT
+              value: 3002
+            - name: JWT_SECRET
+              value: Secret
 ---
 apiVersion: v1
 kind: Service

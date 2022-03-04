@@ -21,6 +21,7 @@ import resolvers from './graphql/resolvers';
           transport: Transport.NATS,
           options: {
             servers: [configService.get('NATS_CONNECTION_URL')],
+            queue: 'cats_queue',
           },
         }),
         inject: [ConfigService],

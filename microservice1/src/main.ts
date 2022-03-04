@@ -7,7 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
 
-  const microservice = app.connectMicroservice({
+  app.connectMicroservice({
     transport: Transport.NATS,
     options: {
       servers: [configService.get('NATS_CONNECTION_URL')],
@@ -15,6 +15,6 @@ async function bootstrap() {
   });
 
   await app.startAllMicroservices();
-  await app.listen(3001);
+  await app.listen(+configService.get('PORT') || 3001);
 }
 bootstrap();
