@@ -11,6 +11,11 @@ export class AppController {
     private jwtService: JwtService,
   ) {}
 
+  @Get('/test-api')
+  testApi() {
+    return 'Hello API';
+  }
+
   @Get()
   getHello() {
     const pattern = { cmd: 'sum' };

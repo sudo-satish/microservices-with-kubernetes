@@ -69,8 +69,15 @@ Test it in browser
 | Visit http://microservice.com/micro1
 
 
+## How to use docker-compose.yml
+Run
+```bash
+$ docker-compose up
+```
+
 # Note:
 If you wanna spin a nets-streaming server with docker 
 ```bash
 $ docker run --rm --name=jst -p 4222:4222 nats-streaming:0.17.0  -hbi 5s -hbt 5s -hbf 2 -SD -cid ticketing
 ```
+

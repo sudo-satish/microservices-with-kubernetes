@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  microservice1:
+    build:
+      context: microservice1
+      dockerfile: Dockerfile
+    volumes:
+      - ./microservice1/src/:/app/src
+    ports:
+      - "3003:3001"
+    environment:
+      PORT: 3001
+      NODE_ENV: development
+      NATS_CONNECTION_URL: nats://nats-dev:4222
+      JWT_SECRET: secret
+    depends_on:
+      - nats-dev
+
+  microservice2:
+    build:
+      context: microservice2
+      dockerfile: Dockerfile
+    volumes:
+      - ./microservice2/src/:/app/src
+    ports:
+      - "3004:3002"
+    environment:
+      PORT: 3002
+      NODE_ENV: development
+      NATS_CONNECTION_URL: nats://nats-dev:4222
+      JWT_SECRET: secret
+    depends_on:
+      - nats-dev
+  
+  nats-dev:
+    ports:
+      - "4222:4222"
+    image: nats-streaming:0.17.0
