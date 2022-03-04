@@ -17,8 +17,8 @@ spec:
           image: sssrockgupta/microservice1
           imagePullPolicy: Never
           env: 
-            - name: NATS_HOST
-              value: nats-srv
+            - name: NATS_CONNECTION_URL
+              value: nats://nats-srv:4222
 ---
 apiVersion: v1
 kind: Service

@@ -1,1 +1,1 @@
-export const natsHost = `nats://${process.env.NATS_HOST}:4222`;
+export const natsHost = process.env.NATS_CONNECTION_URL;
