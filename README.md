@@ -1,3 +1,11 @@
+# Monorepo
+
+This is a monorepo which have 2 microservices
+1. microservice1: [nestjs](https://docs.nestjs.com)
+2. microservice2: [nestjs](https://docs.nestjs.com)
+
+## Monorepo setup
+This project is built on top of the [turborepo](https://turborepo.org/)
 # Working sample of microservices with kubernetes
 - These two micro services can be used as api on http://localhost:3001 and http://localhost:3002.
 - These two micro services are talking with [Request-Response](https://docs.nestjs.com/microservices/nats#request-response)
@@ -55,13 +63,30 @@ spec:
       image: sssrockgupta/microservice1 # <= Replace username
 ```
 
+## You need to install ingress-controller
+
+### What is ingress-controller
+[ingress-nginx](https://kubernetes.github.io/ingress-nginx/deploy/#docker-desktop)
+
+```bash
+$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.1/deploy/static/provider/cloud/deploy.yaml
+```
 Then apply kubernetes yaml files,
 ```bash
-$ kubectl apply -f ./infra/k8s\
+$ kubectl apply -f ./infra/k8s
 ```
 
-You need to add `microservice.com` in host file as well,
+Stop applied kubernetes yaml files,
+
+```bash
+$ kubectl delete -f ./infra/k8s
+```
+
+You need to add `microservice.com` in host file as well for Windows,
 ``C:\Windows\System32\drivers\etc\hosts``
+
+You need to add `microservice.com` in host file as well for Mac,
+``sudo nano /etc/hosts``
 
 ... And done. Phew
 
@@ -81,3 +106,17 @@ If you wanna spin a nets-streaming server with docker
 $ docker run --rm --name=jst -p 4222:4222 nats-streaming:0.17.0  -hbi 5s -hbt 5s -hbf 2 -SD -cid ticketing
 ```
 
+
+# Cleanup
+
+### Stop applied kubernetes yaml files,
+
+```bash
+$ kubectl delete -f ./infra/k8s
+```
+### Delete ingress-controller Deployment
+
+```bash
+$ kubectl get controller --namespace=ingress-nginx
+$ kubectl delete controller ${controller-name} --namespace=ingress-nginx
+```

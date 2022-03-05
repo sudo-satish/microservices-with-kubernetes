@@ -20,7 +20,7 @@ spec:
             - name: NATS_CONNECTION_URL
               value: nats://nats-srv:4222
             - name: PORT
-              value: 3001
+              value: "3001"
             - name: JWT_SECRET
               value: Secret
 ---

@@ -2,10 +2,10 @@ version: "3.9"
 services:
   microservice1:
     build:
-      context: microservice1
+      context: apps/be/microservice1
       dockerfile: Dockerfile
     volumes:
-      - ./microservice1/src/:/app/src
+      - ./apps/be/microservice1/src/:/app/src
     ports:
       - "3003:3001"
     environment:
@@ -21,10 +21,10 @@ services:
 
   microservice2:
     build:
-      context: microservice2
+      context: apps/be/microservice2
       dockerfile: Dockerfile
     volumes:
-      - ./microservice2/src/:/app/src
+      - ./apps/be/microservice2/src/:/app/src
     ports:
       - "3004:3002"
     environment:

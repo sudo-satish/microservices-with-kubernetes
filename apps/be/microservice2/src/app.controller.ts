@@ -34,7 +34,7 @@ export class AppController {
 
   @MessagePattern({ cmd: 'sum' })
   accumulate(data: number[], options): number {
-    console.log('Command Executed', JSON.stringify(options));
+    console.log('Command Executed', JSON.stringify(data));
     return (data || []).reduce((a, b) => a + b);
   }
 
