@@ -4,7 +4,8 @@
   "description": "- These two micro services can be used as api on http://localhost:3001 and http://localhost:3002. - These two micro services are talking with [Request-Response](https://docs.nestjs.com/microservices/nats#request-response) - These two micro services are built with [nestjs](https://docs.nestjs.com/microservices/basics ) - Have a look at the Hybrid application documentation https://docs.nestjs.com/faq/hybrid-application",
   "main": "index.js",
   "workspaces": [
-    "apps/be/*"
+    "apps/be/*",
+    "apps/fe/*"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

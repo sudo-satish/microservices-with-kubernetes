@@ -19,16 +19,29 @@ This project is built on top of the [turborepo](https://turborepo.org/)
 ---
 
 - Setup [NATs server](https://nats.io/)
+-- OR --
+If you wanna spin a nets-streaming server with docker 
+
+```bash
+$ docker run --rm --name=jst -p 4222:4222 nats-streaming:0.17.0  -hbi 5s -hbt 5s -hbf 2 -SD -cid ticketing
+```
+
+### Install dependencies
+
+```bash
+$ npm i
+```
 
 ```bash
 # Install dependencies for microservice1
-$ cd microservice1 && npm i && NODE_ENV NATS_HOST=locahost npm start
-
+$ cd apps/be/microservice1 && npm i && npm start
 
 # In another terminal install dependencies for microservice2
-$ cd microservice2 && npm i && NODE_ENV NATS_HOST=locahost npm start
+$ cd apps/be/microservice2 && npm i && npm start
 ```
 - Visit http://localhost3001 to check the result.
+
+
 
 
 ## How to setup in kubernetes locally?
