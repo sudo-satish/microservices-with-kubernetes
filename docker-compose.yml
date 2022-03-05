@@ -37,6 +37,24 @@ services:
       - nats-dev
     networks:
       - app-network
+
+  fe-microservice1:
+    build:
+      context: apps/fe/fe-microservice1
+      dockerfile: Dockerfile
+    volumes:
+      - ./apps/fe/fe-microservice1/:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      PREFIX: m2
+      NODE_ENV: development
+      NATS_CONNECTION_URL: nats://nats-dev:4222
+      JWT_SECRET: secret
+    networks:
+      - app-network
   
   nats-dev:
     ports:
@@ -77,6 +95,7 @@ services:
     depends_on:
       - microservice1
       - microservice2
+      - fe-microservice1
     networks:
       - app-network
 

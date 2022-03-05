@@ -39,7 +39,9 @@ $ cd apps/be/microservice1 && npm i && npm start
 # In another terminal install dependencies for microservice2
 $ cd apps/be/microservice2 && npm i && npm start
 ```
-- Visit http://localhost3001 to check the result.
+- Visit http://localhost to check if fe-microservice is working
+- Visit http://localhost/m1 to check if be/microservice1 is working.
+- Visit http://localhost/m2 to check if be/microservice2 is working.
 
 
 
