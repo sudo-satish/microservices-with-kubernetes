@@ -133,3 +133,23 @@ $ kubectl delete -f ./infra/k8s
 $ kubectl get controller --namespace=ingress-nginx
 $ kubectl delete controller ${controller-name} --namespace=ingress-nginx
 ```
+
+
+## How to add a new Workspace?
+
+Install dependencies in newly added workspace
+```bash
+$ npm i --workspace=apps/fe/fe-microservice1
+```
+then, run
+
+```bash
+$ npm run start:dev --workspace=apps/fe/fe-microservice1
+```
+to start dev server of newly added work space or else it will not work,
+
+Once runing above command, You can then normally run cmds.
+
+```bash
+$ npm run start:dev
+```
