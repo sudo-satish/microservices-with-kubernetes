@@ -1,0 +1,28 @@
+{
+  "name": "microservices-with-kubernetes",
+  "version": "1.0.0",
+  "description": "- These two micro services can be used as api on http://localhost:3001 and http://localhost:3002. - These two micro services are talking with [Request-Response](https://docs.nestjs.com/microservices/nats#request-response) - These two micro services are built with [nestjs](https://docs.nestjs.com/microservices/basics ) - Have a look at the Hybrid application documentation https://docs.nestjs.com/faq/hybrid-application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "turbo": "turbo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudo-satish/microservices-with-kubernetes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudo-satish/microservices-with-kubernetes/issues"
+  },
+  "homepage": "https://github.com/sudo-satish/microservices-with-kubernetes#readme",
+  "devDependencies": {
+    "turbo": "^1.1.5"
+  },
+  "workspaces": [
+    "microservice1/*",
+    "microservice2/*"
+  ]
+}
