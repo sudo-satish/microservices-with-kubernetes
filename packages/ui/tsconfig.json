@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "lib/esm",
+    "module": "esnext",
+    "target": "es2020",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    // "jsx": "react-jsx",
+    "jsx": "react-jsxdev",
+    "moduleResolution": "node",
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "lib"]
+}

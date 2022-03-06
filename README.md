@@ -155,3 +155,5 @@ Once runing above command, You can then normally run cmds.
 ```bash
 $ npm run start:dev
 ```
+
+npm run start:dev --workspace=packages/common

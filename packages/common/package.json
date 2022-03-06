@@ -1,0 +1,19 @@
+{
+  "name": "@satishkumr001/common",
+  "version": "1.0.0",
+  "description": "- These two micro services can be used as api on http://localhost:3001 and http://localhost:3002. - These two micro services are talking with [Request-Response](https://docs.nestjs.com/microservices/nats#request-response) - These two micro services are built with [nestjs](https://docs.nestjs.com/microservices/basics ) - Have a look at the Hybrid application documentation https://docs.nestjs.com/faq/hybrid-application",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo 'test'",
+    "build": "tsc",
+    "start:dev": "tsc --watch",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.6.2"
+  }
+}

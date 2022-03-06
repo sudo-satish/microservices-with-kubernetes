@@ -1,0 +1,40 @@
+{
+  "name": "@satishkumr001/ui",
+  "version": "1.1.1",
+  "private": false,
+  "description": "- These two micro services can be used as api on http://localhost:3001 and http://localhost:3002. - These two micro services are talking with [Request-Response](https://docs.nestjs.com/microservices/nats#request-response) - These two micro services are built with [nestjs](https://docs.nestjs.com/microservices/basics ) - Have a look at the Hybrid application documentation https://docs.nestjs.com/faq/hybrid-application",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sudo-satish/microservices-with-kubernetes.git"
+  },
+  "scripts": {
+    "test": "echo 'test'",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "build:esm": "tsc",
+    "start:dev": "tsc --watch",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "publish": "npm publish --access public"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.21",
+    "@types/react": "^17.0.39",
+    "prettier": "^2.5.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.6.2"
+  },
+  "peerDependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "dependencies": {
+    "@types/react-dom": "^17.0.13",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
