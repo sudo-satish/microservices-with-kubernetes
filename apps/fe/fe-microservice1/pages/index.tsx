@@ -6,6 +6,7 @@ import {Button} from '@satishkumr001/ui';
 import styles from '../styles/Home.module.css'
 
 console.log({satish})
+console.log(process.env.NPM_TOKEN)
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
