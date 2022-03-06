@@ -5,6 +5,7 @@ import {userId, satish} from '@satishkumr001/common';
 import {Button} from '@satishkumr001/ui';
 import styles from '../styles/Home.module.css'
 
+console.log({satish})
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
