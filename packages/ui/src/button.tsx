@@ -1,2 +1,2 @@
-export const Button = () => <button>Satish  button 559996</button>;
+export const Button = () => <button>Test Button</button>;
 export default {}

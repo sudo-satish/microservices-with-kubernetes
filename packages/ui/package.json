@@ -15,7 +15,9 @@
     "build": "npm run build:esm && npm run build:cjs",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
     "build:esm": "tsc",
-    "start:dev": "tsc --watch",
+    "start:dev": "npm run start:dev:cjs | npm run start:dev:esm",
+    "start:dev:cjs": "tsc --module commonjs --outDir lib/cjs --watch",
+    "start:dev:esm": "tsc --watch",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json"
   },
