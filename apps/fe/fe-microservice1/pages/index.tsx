@@ -2,15 +2,10 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import {userId, satish} from '@satishkumr001/common';
-import {Button, sayHello} from '@satishkumr001/ui';
-
+import {Button} from '@satishkumr001/ui';
 import styles from '../styles/Home.module.css'
-// console.log(sayHello('Satish'), 'tes');
 
-console.log("Button => ", Button, sayHello)
 const Home: NextPage = () => {
-
-  console.log({userId, satish }, 'tes');
   return (
     <div className={styles.container}>
       <Head>
@@ -24,7 +19,7 @@ const Home: NextPage = () => {
         </h1>
 
         <div>
-        {/* <Button /> */}
+        <Button />
         </div>
 
         <p className={styles.description}>
