@@ -110,6 +110,12 @@ Test it in browser
 
 
 ## How to use docker-compose.yml
+
+Export NPM_TOKEN to access @satishkumr001/ui and @satishkumr001/common from docker
+```bash
+$ export NPM_TOKEN=npm_6xxxx
+```
+
 Run
 ```bash
 $ docker-compose up

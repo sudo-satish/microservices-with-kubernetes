@@ -4,6 +4,8 @@ services:
     build:
       context: apps/be/microservice1
       dockerfile: Dockerfile
+      args:
+        - NPM_TOKEN=123
     volumes:
       - ./apps/be/microservice1/src/:/app/src
     ports:
@@ -14,6 +16,7 @@ services:
       NODE_ENV: development
       NATS_CONNECTION_URL: nats://nats-dev:4222
       JWT_SECRET: secret
+      NPM_TOKEN: ${NPM_TOKEN}
     depends_on:
       - nats-dev
     networks:
@@ -23,6 +26,8 @@ services:
     build:
       context: apps/be/microservice2
       dockerfile: Dockerfile
+      args:
+        - NPM_TOKEN=123
     volumes:
       - ./apps/be/microservice2/src/:/app/src
     ports:
@@ -33,6 +38,7 @@ services:
       NODE_ENV: development
       NATS_CONNECTION_URL: nats://nats-dev:4222
       JWT_SECRET: secret
+      NPM_TOKEN: ${NPM_TOKEN}
     depends_on:
       - nats-dev
     networks:
