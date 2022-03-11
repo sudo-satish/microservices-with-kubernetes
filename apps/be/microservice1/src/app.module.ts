@@ -17,10 +17,10 @@ const graphqlPath = process.env.PREFIX
     ConfigModule.forRoot(),
     ClientsModule.registerAsync([
       {
-        name: 'ITEM_MICROSERVICE1',
+        name: 'NATS_SERVER',
         imports: [ConfigModule],
         useFactory: async (configService: ConfigService) => ({
-          name: 'ITEM_MICROSERVICE1',
+          name: 'NATS_SERVER',
           transport: Transport.NATS,
           options: {
             servers: [configService.get('NATS_CONNECTION_URL')],

@@ -7,7 +7,7 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(
     private readonly appService: AppService,
-    @Inject('ITEM_MICROSERVICE1') private client: ClientProxy,
+    @Inject('NATS_SERVER') private client: ClientProxy,
     private jwtService: JwtService,
   ) {}
 

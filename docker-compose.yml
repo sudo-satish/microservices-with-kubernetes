@@ -9,7 +9,7 @@ services:
     volumes:
       - ./apps/be/microservice1/src/:/app/src
     ports:
-      - "3003:3001"
+      - "3001:3001"
     environment:
       PORT: 3001
       PREFIX: m1
@@ -31,7 +31,7 @@ services:
     volumes:
       - ./apps/be/microservice2/src/:/app/src
     ports:
-      - "3004:3002"
+      - "3002:3002"
     environment:
       PORT: 3002
       PREFIX: m2
